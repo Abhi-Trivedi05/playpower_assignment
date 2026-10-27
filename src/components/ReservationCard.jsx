@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Tag, ChevronDown, ChevronUp, Flag, Plus, Minus } from 'lucide-react';
+import { ChevronDown, ChevronUp, Flag, Plus, Minus } from 'lucide-react';
 
 export default function ReservationCard({
   checkIn,

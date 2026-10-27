@@ -2222,82 +2222,6 @@ button {
   gap: 6px;
 }
 
-/* =========================================================
-   FOOTER
-========================================================= */
-.site-footer {
-  background-color: var(--bg-subtle);
-  border-top: 1px solid var(--border-light);
-  padding: 40px 0 24px;
-}
-
-.footer-top-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  padding-bottom: 40px;
-  border-bottom: 1px solid var(--border-light);
-}
-
-@media (max-width: 744px) {
-  .footer-top-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-}
-
-.footer-col h5 {
-  font-size: 14px;
-  font-weight: 700;
-  margin-bottom: 16px;
-}
-
-.footer-links-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.footer-links-list a {
-  font-size: 14px;
-  color: var(--text-primary);
-  text-decoration: none;
-}
-
-.footer-links-list a:hover {
-  text-decoration: underline;
-}
-
-.footer-bottom-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 24px;
-  font-size: 14px;
-  color: var(--text-secondary);
-}
-
-@media (max-width: 744px) {
-  .footer-bottom-row {
-    flex-direction: column;
-    gap: 16px;
-    align-items: flex-start;
-  }
-}
-
-.footer-bottom-left {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.footer-bottom-right {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
 
 /* =========================================================
    MODALS & OVERLAYS
@@ -3096,29 +3020,6 @@ button {
     scroll-snap-align: start;
   }
 
-  /* Footer */
-  .site-footer {
-    padding: 28px 0 20px;
-  }
-  .footer-top-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-    padding-bottom: 24px;
-  }
-  .footer-bottom-row {
-    flex-direction: column;
-    gap: 16px;
-    align-items: flex-start;
-  }
-  .footer-bottom-left {
-    gap: 8px 12px;
-    font-size: 13px;
-  }
-  .footer-bottom-right {
-    width: 100%;
-    justify-content: space-between;
-    font-size: 13px;
-  }
 
   /* Mobile Bottom Reservation Bar */
   .mobile-bottom-bar {
