@@ -758,6 +758,41 @@ Welcome to your serene holiday sanctuary in Goa. Designed meticulously with cont
       price: 39942,
       rating: 4.95,
       image: "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=500&q=80"
+    },
+    {
+      id: 6,
+      title: "SaffronStays Ocean Pearl | Luxury Beachfront Villa",
+      price: 52400,
+      rating: 4.98,
+      image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=500&q=80"
+    },
+    {
+      id: 7,
+      title: "Boho Chic Apartment with Balcony & Sunset Views",
+      price: 18500,
+      rating: 4.89,
+      image: "https://images.unsplash.com/photo-1502672023488-70e25813eb80?auto=format&fit=crop&w=500&q=80"
+    },
+    {
+      id: 8,
+      title: "The Heritage Portuguese Villa with Private Garden",
+      price: 34200,
+      rating: 4.92,
+      image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=500&q=80"
+    },
+    {
+      id: 9,
+      title: "Secluded Palms 2BHK Penthouse in North Goa",
+      price: 29800,
+      rating: 4.97,
+      image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=500&q=80"
+    },
+    {
+      id: 10,
+      title: "Zense Boutique Suite with Infinity Pool Access",
+      price: 26400,
+      rating: 4.93,
+      image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=500&q=80"
     }
   ]
 };

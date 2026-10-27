@@ -1,16 +1,54 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
 
-export default function NearbyStays({ stays }) {
+export default function NearbyStays({ stays = [] }) {
+  const sliderRef = useRef(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = 2;
+  const [totalPages, setTotalPages] = useState(2);
+
+  const calculatePages = () => {
+    if (sliderRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = sliderRef.current;
+      const maxScroll = scrollWidth - clientWidth;
+      if (maxScroll <= 0) {
+        setTotalPages(1);
+        setCurrentPage(1);
+        return;
+      }
+      const pageCount = Math.round(scrollWidth / clientWidth);
+      const total = Math.max(1, pageCount);
+      const current = Math.min(Math.max(1, Math.round(scrollLeft / clientWidth) + 1), total);
+      setTotalPages(total);
+      setCurrentPage(current);
+    }
+  };
+
+  useEffect(() => {
+    calculatePages();
+    window.addEventListener('resize', calculatePages);
+    return () => window.removeEventListener('resize', calculatePages);
+  }, [stays]);
 
   const handlePrev = () => {
-    setCurrentPage(prev => (prev === 1 ? totalPages : prev - 1));
+    if (sliderRef.current) {
+      const { scrollLeft, clientWidth, scrollWidth } = sliderRef.current;
+      if (scrollLeft <= 10) {
+        sliderRef.current.scrollTo({ left: scrollWidth, behavior: 'smooth' });
+      } else {
+        sliderRef.current.scrollBy({ left: -(clientWidth + 16), behavior: 'smooth' });
+      }
+    }
   };
 
   const handleNext = () => {
-    setCurrentPage(prev => (prev === totalPages ? 1 : prev + 1));
+    if (sliderRef.current) {
+      const { scrollLeft, clientWidth, scrollWidth } = sliderRef.current;
+      if (scrollLeft + clientWidth >= scrollWidth - 10) {
+        sliderRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        sliderRef.current.scrollBy({ left: clientWidth + 16, behavior: 'smooth' });
+      }
+    }
   };
 
   return (
@@ -28,7 +66,11 @@ export default function NearbyStays({ stays }) {
         </div>
       </div>
 
-      <div className="nearby-cards-slider">
+      <div
+        className="nearby-cards-slider"
+        ref={sliderRef}
+        onScroll={calculatePages}
+      >
         {stays.map((stay) => (
           <div key={stay.id} className="nearby-card" role="button" tabIndex={0}>
             <div className="nearby-card-img-wrap">
