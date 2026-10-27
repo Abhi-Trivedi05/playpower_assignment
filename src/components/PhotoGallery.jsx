@@ -1,5 +1,4 @@
 import React, { useState, useRef } from 'react';
-import { Grid } from 'lucide-react';
 
 export default function PhotoGallery({ images, onOpenTour }) {
   if (!images || images.length === 0) return null;
@@ -77,7 +76,24 @@ export default function PhotoGallery({ images, onOpenTour }) {
         onClick={() => onOpenTour(activeIndex)}
         aria-label="Show all photos"
       >
-        <Grid size={16} />
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+          fill="currentColor"
+          aria-hidden="true"
+          style={{ display: 'block', flexShrink: 0 }}
+        >
+          <circle cx="2.5" cy="2.5" r="1.5" />
+          <circle cx="8" cy="2.5" r="1.5" />
+          <circle cx="13.5" cy="2.5" r="1.5" />
+          <circle cx="2.5" cy="8" r="1.5" />
+          <circle cx="8" cy="8" r="1.5" />
+          <circle cx="13.5" cy="8" r="1.5" />
+          <circle cx="2.5" cy="13.5" r="1.5" />
+          <circle cx="8" cy="13.5" r="1.5" />
+          <circle cx="13.5" cy="13.5" r="1.5" />
+        </svg>
         <span>Show all photos</span>
       </button>
     </section>
